@@ -1,15 +1,26 @@
 .App {
   text-align: center;
-
 }
 
 .App-header{
+  display: flex;
   color: rgb(235, 235, 235);
   background-color: rgb(196, 34, 255);
-  padding: 2px;
+  align-items: center;
+}
+
+.Head{
+  background-color: rgb(196, 34, 255);
+  width: 100%;
+  cursor:pointer;
   font-size: 20px;
-  margin: 20px;
-  
+}
+
+.walleticon{
+  padding: 20px;
+  font-size: 50px;
+  cursor:pointer;
+  margin-left: 40px;
 }
 
 .form{
@@ -82,8 +93,4 @@ th{
 .deltbtn{
   color: white;
   font-size: 30px;
-}
-
-.walleticon{
-  font-size: 50px;
 }

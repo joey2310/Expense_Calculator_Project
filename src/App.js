@@ -48,8 +48,7 @@ return(
         <label className='amount'>AMOUNT<br/></label>
         <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
-      <button type='submit'><FontAwesomeIcon className='addbtn' icon={['fas', 'fa-square-plus']} />
-      <br></br><h3>ADD EXPENSE</h3></button>
+      <button type='submit'><FontAwesomeIcon className='addbtn' icon={['fas', 'fa-square-plus']} /> <h3>ADD EXPENSE</h3></button>
       </form>
 )
 }
@@ -70,10 +69,15 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <FontAwesomeIcon className='walleticon' icon={['fas', 'fa-wallet']} /> Expense Manager
+        <div className='walleticon'>
+        <FontAwesomeIcon icon={['fas', 'fa-wallet']} /> 
+        </div>
+        <div className='Head'><h1>Expense Manager </h1>
+        </div>
       </header>
       <ExpenseForm onAddExpense={addExpense}/>
-      <div className='banceamt'>Balance Amount: {totalAmount}</div>
+      <div className='banceamt'>Balance Amount: {totalAmount}
+      </div>
    <div className='Table'>  
     <table>
       <thead>
