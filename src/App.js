@@ -5,6 +5,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { PieChart } from '@mui/x-charts/PieChart';
 
 //Expense Form Component
 const ExpenseForm =({onAddExpense}) =>{
@@ -74,7 +75,7 @@ function App() {
         <div className='walleticon'>
         <FontAwesomeIcon className='walleticon' icon={['fas', 'fa-wallet']} />
         </div>
-        <div className='Head'><h1>Expense Manager </h1>
+        <div className='Head'><h1>Expense Manager for Rutuja </h1>
         </div>
         <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
 

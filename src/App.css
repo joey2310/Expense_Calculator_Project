@@ -36,25 +36,30 @@
 
 .forminpt{
 width: 30%;
-margin: 50px 20px;
+margin: 50px;
 padding: 10px;
 border: 1px solid #000000;
 border-radius: 10px;
-background-color: #7a7a7a;
+background-color: #6d6d6d;
 box-shadow: 10px 10px 10px rgb(0, 0, 0);
 text-align: center;
 color: rgb(255, 255, 255);
-font-size: 20px;
+}
+
+label{
+font-size: 40px;
 }
 
 input{
   text-align: center;
   width: 70%;
+  height: 40px;
   padding: 8px;
   margin-top: 20px;
   margin-bottom: 1%;
   border-radius: 4px;
   color: rgb(0, 0, 0);
+  font-size: 20px;
 }
 
 button {
@@ -64,6 +69,7 @@ button {
   border: none;
   border-radius: 14px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 button:hover {
@@ -98,6 +104,9 @@ th{
 }
 
 .addbtn{
+  margin-top: 20px;
+  width: 200px;
+  display: flex;
   color: white;
   font-size: 50px;
 }
