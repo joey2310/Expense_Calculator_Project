@@ -72,10 +72,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='walleticon'>
-        <FontAwesomeIcon icon={['fas', 'fa-wallet']} /> 
+        <FontAwesomeIcon className='walleticon' icon={['fas', 'fa-wallet']} />
         </div>
         <div className='Head'><h1>Expense Manager </h1>
         </div>
+        <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
+
       </header>
       <ExpenseForm onAddExpense={addExpense}/>
       <div className='banceamt'>Balance Amount: {totalAmount}
