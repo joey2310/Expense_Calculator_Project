@@ -36,6 +36,7 @@ const ExpenseForm =({onAddExpense}) =>{
 
 return(
   <form onSubmit={handleSubmit}>
+    <div className='forminpt'>
         <div>
           <label className='title'>TITLE<br/></label>
           <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}/>
@@ -49,6 +50,7 @@ return(
         <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
       <button type='submit'><FontAwesomeIcon className='addbtn' icon={['fas', 'fa-square-plus']} /> <h3>ADD EXPENSE</h3></button>
+      </div>
       </form>
 )
 }
