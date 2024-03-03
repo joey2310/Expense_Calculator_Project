@@ -5,8 +5,11 @@
 
 .App-header{
   color: rgb(235, 235, 235);
-  background-color: rgb(164, 22, 215);
-  padding: 1%;
+  background-color: rgb(196, 34, 255);
+  padding: 2px;
+  font-size: 20px;
+  margin: 20px;
+  
 }
 
 .form{
@@ -73,5 +76,14 @@ th{
 
 .addbtn{
   color: white;
-  font-size: 80px;
+  font-size: 50px;
+}
+
+.deltbtn{
+  color: white;
+  font-size: 30px;
+}
+
+.walleticon{
+  font-size: 50px;
 }

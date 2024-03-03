@@ -49,7 +49,7 @@ return(
         <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
       <button type='submit'><FontAwesomeIcon className='addbtn' icon={['fas', 'fa-square-plus']} />
-      <br></br>ADD EXPENSE</button>
+      <br></br><h3>ADD EXPENSE</h3></button>
       </form>
 )
 }
@@ -70,7 +70,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Expense Manager</h1>
+        <FontAwesomeIcon className='walleticon' icon={['fas', 'fa-wallet']} /> Expense Manager
       </header>
       <ExpenseForm onAddExpense={addExpense}/>
       <div className='banceamt'>Balance Amount: {totalAmount}</div>
@@ -90,7 +90,7 @@ function App() {
           <td>{expense.title}</td>
           <td>{expense.category}</td>
           <td>{expense.amount}</td>
-          <td><button className='delete-btn' onClick={() =>deleteExpense(expense.id)}><FontAwesomeIcon icon={['fas', 'fa-trash-can']} /></button></td>
+          <td><button className='delete-btn' onClick={() =>deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
         </tr>
         )}
       </tbody>
