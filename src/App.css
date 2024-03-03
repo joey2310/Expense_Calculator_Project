@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+
+}
+
+.App-header{
+  color: rgb(235, 235, 235);
+  background-color: rgb(164, 22, 215);
+  padding: 1%;
+}
+
+.form{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 300px;
+margin-bottom: 20px;
+}
+
+.label{
+  margin-bottom: 5px;
+}
+
+input{
+  text-align: center;
+  width: 50%;
+  padding: 8px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #027509;
+}
+
+table{
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td{
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+
+th{
+  background-color: #6000b5;
+  color: white;
+}
+
+.delete-btn{
+  background-color: red;
+}
+
+.delete-btn:hover{
+  background-color: rgb(255, 140, 0);
+}
+
+.banceamt{
+  font-size: 20px;
+}
+
+.addbtn{
+  color: white;
+  font-size: 80px;
+}
