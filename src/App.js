@@ -50,7 +50,9 @@ return(
         <label className='amount'>AMOUNT<br/></label>
         <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
-      <button type='submit'><FontAwesomeIcon className='addbtn' icon={['fas', 'fa-square-plus']} /> <h3>ADD EXPENSE</h3></button>
+        <div>
+      <button className='addbtn' type='submit'><FontAwesomeIcon icon={['fas', 'fa-square-plus']} /> <h3>ADD EXPENSE</h3></button>
+        </div>
       </div>
       </form>
 )
