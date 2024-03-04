@@ -119,9 +119,12 @@ function App() {
     <table>
       <thead>
         <tr>
+          <th>Date</th>
           <th>TITLE</th>
           <th>CATEGORY</th>
           <th>AMOUNT</th>
+          <th>CREDIT</th>
+          <th>DEBIT</th>
           <th>ACTION</th>
         </tr>
       </thead>
