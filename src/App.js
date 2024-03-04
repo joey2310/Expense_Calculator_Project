@@ -5,7 +5,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { PieChart } from '@mui/x-charts/PieChart';
+import { PieChart } from 'react-minimal-pie-chart';
 
 //Expense Form Component
 const ExpenseForm =({onAddExpense}) =>{
@@ -51,10 +51,12 @@ return(
         <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
         <div>
-      <button className='addbtn' type='submit'><FontAwesomeIcon icon={['fas', 'fa-square-plus']} /> <h3>ADD EXPENSE</h3></button>
+      <button className='addbtn' type='submit'><FontAwesomeIcon icon={['fas', 'fa-square-plus']} /></button>
         </div>
       </div>
       </form>
+      
+
 )
 }
 
@@ -80,9 +82,32 @@ function App() {
         <div className='Head'><h1>Expense Manager for Rutuja </h1>
         </div>
         <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
-
       </header>
+      <div className='Mid'>
+        <div>
       <ExpenseForm onAddExpense={addExpense}/>
+      </div>
+      <div className='piechart1'><PieChart
+      data={[
+    { title: 'Income', value: 100, color: '#E38627' },
+    { title: 'Expense', value: 150, color: '#C13C37' },
+      ]}/>
+      </div>
+      <div className='piechart2'><PieChart
+      data={[
+    { title: 'One', value: 10, color: '#E38627' },
+    { title: 'Two', value: 15, color: '#C13C37' },
+    { title: 'Three', value: 20, color: '#6A2135' },
+      ]}/>
+      </div>
+      <div className='piechart3'><PieChart
+      data={[
+    { title: 'One', value: 10, color: '#E38627' },
+    { title: 'Two', value: 15, color: '#C13C37' },
+    { title: 'Three', value: 20, color: '#6A2135' },
+      ]}/>
+      </div>
+      </div>
       <div className='banceamt'>Balance Amount: {totalAmount}
       </div>
    <div className='Table'>  

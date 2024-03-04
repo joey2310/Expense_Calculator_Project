@@ -29,12 +29,21 @@
   padding: 20px;
   font-size: 50px;
   cursor:pointer;
-  margin-right: 40px;
+  margin-right: 80px;
+}
+
+.addbtn{
+  align-items: center;
+  color: #6d6d6d;
+  font-size: 80px;
+  width: 200px;
+  margin: 20px;
 }
 
 .forminpt{
-width: 30%;
+width: 80%;
 margin: 50px;
+margin-right: 200px;
 padding: 10px;
 border: 1px solid #000000;
 border-radius: 10px;
@@ -61,7 +70,6 @@ input{
 }
 
 button {
-  background-color: #4caf50;
   color: white;
  margin: 20px;
   border: none;
@@ -71,7 +79,7 @@ button {
 }
 
 button:hover {
-  background-color: #027509;
+  background-color: #303030;
 }
 
 table{
@@ -97,18 +105,28 @@ th{
   background-color: rgb(255, 140, 0);
 }
 
-.addbtn{
-  align-items: center;
-  margin-top: 20px;
-  width: 300px;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  font-size: 20px;
-  border-color: #000000;
-}
 
 .deltbtn{
   color: white;
   font-size: 30px;
+}
+
+.piechart1{
+  margin: 50px;
+  width: 20%;
+}
+
+.piechart2{
+  margin: 50px;
+  width: 20%;
+}
+
+.piechart3{
+  margin: 50px;
+  width: 20%;
+}
+
+.Mid{
+display: flex;
+flex-direction: row;
 }
