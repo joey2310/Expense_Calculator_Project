@@ -141,3 +141,59 @@ flex-direction: row;
   align-items: center;
   font-size: 40px;
 }
+
+/* Toggle Switch Styles */
+.react-toggle {
+  cursor: pointer;
+  display: inline-flex;
+  vertical-align: middle;
+  width: 50px;
+  height: 25px;
+  padding: 0;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.react-toggle:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.react-toggle:hover {
+  border-color: #007bff;
+}
+
+.react-toggle .react-toggle-track {
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.react-toggle .react-toggle-track:after {
+  content: '';
+  display: block;
+  width: 18px;
+  height: 18px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.react-toggle-screenreader-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

@@ -6,12 +6,14 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import {FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PieChart } from 'react-minimal-pie-chart';
+import Toggle from 'react-toggle';
 
 //Expense Form Component
 const ExpenseForm =({onAddExpense}) =>{
   const[title,setTitle] = useState('');
   const[category,setCategory] = useState('');
   const[amount,setAmount] = useState('');
+  const [checked, setChecked] = useState(false);
 
   const handleSubmit =(e) => {
     e.preventDefault();
@@ -51,6 +53,11 @@ return(
         <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
         </div>
         <div>
+        <div class="toggle-switch">
+        <Toggle
+          onChange={(event) => setChecked(event.target.checked)}
+        /><h2>{checked ? 'Credit' : 'Debit'}</h2>
+        </div>
       <button className='addbtn' type='submit'><FontAwesomeIcon icon={['fas', 'fa-square-plus']} /></button>
         </div>
       </div>
