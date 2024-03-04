@@ -55,8 +55,6 @@ return(
         </div>
       </div>
       </form>
-      
-
 )
 }
 
@@ -79,7 +77,7 @@ function App() {
         <div className='walleticon'>
         <FontAwesomeIcon className='walleticon' icon={['fas', 'fa-wallet']} />
         </div>
-        <div className='Head'><h1>Expense Manager for Rutuja </h1>
+        <div className='Head'>Expense Manager for Rutuja
         </div>
         <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
       </header>
@@ -108,7 +106,7 @@ function App() {
       ]}/>
       </div>
       </div>
-      <div className='banceamt'>Balance Amount: {totalAmount}
+      <div className='banceamt'>Balance Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
       </div>
    <div className='Table'>  
     <table>
