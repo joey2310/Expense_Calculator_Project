@@ -8,26 +8,29 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PieChart } from 'react-minimal-pie-chart';
 import Toggle from 'react-toggle';
 
-//Expense Form Component
-const ExpenseForm =({onAddExpense}) =>{
+// Expense Form Component
+const ExpenseForm = ({ onAddExpense, onUpdateChart }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('');
   const [credit, setCredit] = useState(false); // Default state for credit/debit toggle
 
-  const handleSubmit =(e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!title.trim() || !amount.trim() || !category.trim()){
+    if (!title.trim() || !amount.trim() || !category.trim()) {
       return;
     }
+    const adjustedAmount = credit ? +amount : -amount; // Adjust amount based on toggle state
+
 
     const newExpense = {
       id: Math.random().toString(),
       title,
       category,
-      amount: +amount,
+      amount: adjustedAmount,
       credit: credit ? 'Credit' : 'Debit', // Set credit/debit based on toggle state
+      date: new Date().toLocaleString() // Include the current date
     };
 
     console.log(newExpense);
@@ -37,28 +40,30 @@ const ExpenseForm =({onAddExpense}) =>{
     setTitle('');
     setCategory('');
     setAmount('');
+    onUpdateChart();
   }
 
-  return(
+  return (
     <form onSubmit={handleSubmit}>
       <div className='forminpt'>
         <div>
-          <label className='title'>TITLE<br/></label>
-          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)}/>
+          <label className='title'>TITLE<br /></label>
+          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} />
         </div>
         <div>
-          <label className='category'>CATEGORY<br/></label>
+          <label className='category'>CATEGORY<br /></label>
           <select value={category} onChange={(e) => setCategory(e.target.value)}>
             <option value="">Select category</option>
             <option value="Food">Food</option>
             <option value="Transport">Transport</option>
             <option value="Shopping">Shopping</option>
             <option value="Entertainment">Entertainment</option>
+            <option value="Salary">Salary</option>
           </select>
         </div>
         <div>
-          <label className='amount'>AMOUNT<br/></label>
-          <input type='number'value={amount} onChange={(e) => setAmount(e.target.value)}/>
+          <label className='amount'>AMOUNT<br /></label>
+          <input type='number' value={amount} onChange={(e) => setAmount(e.target.value)} />
         </div>
         <div>
           <div class="toggle-switch">
@@ -75,18 +80,31 @@ const ExpenseForm =({onAddExpense}) =>{
   )
 }
 
+// App component
 function App() {
   const [expenses, setExpenses] = useState([]);
+  const [chartData, setChartData] = useState([
+    { title: 'Income', value: 100, color: '#E38627' },
+    { title: 'Expense', value: 150, color: '#C13C37' },
+  ]);
 
-  const addExpense = (expense) =>{
-    setExpenses([...expenses,expense])
+  const addExpense = (expense) => {
+    setExpenses([...expenses, expense])
   }
 
-  const deleteExpense =(id) =>{
-    setExpenses(expenses.filter((expense) => expense.id !==id));
+  const deleteExpense = (id) => {
+    setExpenses(expenses.filter((expense) => expense.id !== id));
   }
 
-  const totalAmount = expenses.reduce((total,expense) => total + expense.amount,0);
+  const updateChart = ()=>{
+    const newData = [
+      { title: 'New Data 1', value: totalAmount * 100, color: '#E38627' },
+      { title: 'New Data 2', value: Math.random() * 100, color: '#C13C37' },
+    ];
+    setChartData(newData);
+  }
+
+  const totalAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
 
   return (
     <div className="App">
@@ -96,27 +114,22 @@ function App() {
         </div>
         <div className='Head'>Expense Manager for Rutuja
         </div>
-        <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
+        <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} />
       </header>
       <div className='Mid'>
         <div>
-          <ExpenseForm onAddExpense={addExpense}/>
+          <ExpenseForm onAddExpense={addExpense} onUpdateChart={updateChart}/>
         </div>
-        <div className='piechart1'><PieChart
-          data={[
-            { title: 'Income', value: 100, color: '#E38627' },
-            { title: 'Expense', value: 150, color: '#C13C37' },
-          ]}/>
-          <div className='chrttxt'>
-            Debit / Credit
-          </div>
+        <div className='piechart1'>
+          <PieChart data={chartData} />
+          <div className='chrttxt'>Debit / Credit</div>
         </div>
         <div className='piechart2'><PieChart
           data={[
             { title: 'One', value: 10, color: '#E38627' },
             { title: 'Two', value: 15, color: '#C13C37' },
             { title: 'Three', value: 20, color: '#6A2135' },
-          ]}/>
+          ]} />
           <div className='chrttxt'>
             Category Wise
           </div>
@@ -126,16 +139,18 @@ function App() {
             { title: 'One', value: 10, color: '#E38627' },
             { title: 'Two', value: 15, color: '#C13C37' },
             { title: 'Three', value: 20, color: '#6A2135' },
-          ]}/>
+          ]} />
           <div className='chrttxt'>
             Title Wise
           </div>
         </div>
       </div>
       <hr className='hr'></hr>
-      <div className='banceamt'>Balance Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
+      <div className='banceamt'>Income Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} />
       </div>
-      <div className='Table'>  
+      <div className='banceamt'>Debited Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} />
+      </div>
+      <div className='Table'>
         <table>
           <thead>
             <tr>
@@ -143,7 +158,7 @@ function App() {
               <th>TITLE</th>
               <th>CATEGORY</th>
               <th>AMOUNT</th>
-              <th>CREDIT/DEBIT</th>     
+              <th>CREDIT/DEBIT</th>
               <th>ACTION</th>
             </tr>
           </thead>
@@ -155,7 +170,7 @@ function App() {
                 <td>{expense.category}</td>
                 <td>{expense.amount}</td>
                 <td>{expense.credit}</td>
-                <td className='td5'><button className='delete-btn' onClick={() =>deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
+                <td className='td5'><button className='delete-btn' onClick={() => deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
               </tr>
             )}
           </tbody>
