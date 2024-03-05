@@ -46,7 +46,13 @@ return(
         </div>
         <div>
         <label className='category'>CATEGORY<br/></label>
-          <input type='text' value={category} onChange={(e) => setCategory(e.target.value)}/>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="">Select category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Entertainment">Entertainment</option>
+          </select>
         </div>
         <div>
         <label className='amount'>AMOUNT<br/></label>
@@ -56,7 +62,7 @@ return(
         <div class="toggle-switch">
         <Toggle
           onChange={(event) => setChecked(event.target.checked)}
-        /><h2>{checked ? 'Credit' : 'Debit'}</h2>
+        /><h1>{checked ? 'Credit' : 'Debit'}</h1>
         </div>
       <button className='addbtn' type='submit'><FontAwesomeIcon icon={['fas', 'fa-square-plus']} /></button>
         </div>
@@ -97,6 +103,9 @@ function App() {
     { title: 'Income', value: 100, color: '#E38627' },
     { title: 'Expense', value: 150, color: '#C13C37' },
       ]}/>
+      <div className='chrttxt'>
+      Debit / Credit
+      </div>
       </div>
       <div className='piechart2'><PieChart
       data={[
@@ -104,6 +113,9 @@ function App() {
     { title: 'Two', value: 15, color: '#C13C37' },
     { title: 'Three', value: 20, color: '#6A2135' },
       ]}/>
+      <div className='chrttxt'>
+      Category Wise
+      </div>
       </div>
       <div className='piechart3'><PieChart
       data={[
@@ -111,8 +123,12 @@ function App() {
     { title: 'Two', value: 15, color: '#C13C37' },
     { title: 'Three', value: 20, color: '#6A2135' },
       ]}/>
+      <div className='chrttxt'>
+      Title Wise
       </div>
       </div>
+      </div>
+      <hr className='hr'></hr>
       <div className='banceamt'>Balance Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} /> 
       </div>
    <div className='Table'>  
@@ -123,18 +139,19 @@ function App() {
           <th>TITLE</th>
           <th>CATEGORY</th>
           <th>AMOUNT</th>
-          <th>CREDIT</th>
-          <th>DEBIT</th>
+          <th>CREDIT/DEBIT</th>     
           <th>ACTION</th>
         </tr>
       </thead>
       <tbody>
         {expenses.map((expense) =>
         <tr key={expense.id}>
+          <td>{expense.date}</td>
           <td>{expense.title}</td>
           <td>{expense.category}</td>
           <td>{expense.amount}</td>
-          <td><button className='delete-btn' onClick={() =>deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
+          <td>{expense.cedit}</td>
+          <td className='td5'><button className='delete-btn' onClick={() =>deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
         </tr>
         )}
       </tbody>

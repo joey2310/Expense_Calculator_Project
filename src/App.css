@@ -60,10 +60,22 @@ label{
 font-size: 40px;
 }
 
-input{
+input {
   text-align: center;
   width: 70%;
-  height: 40px;
+  height:30px;
+  padding: 8px;
+  margin-top: 10px;
+  margin-bottom: 1%;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  font-size: 20px;
+}
+
+select {
+  text-align: center;
+  width: 75%;
+  height: 50px;
   padding: 8px;
   margin-top: 10px;
   margin-bottom: 1%;
@@ -102,6 +114,7 @@ th{
 }
 
 .delete-btn{
+  padding: 10px;
   background-color: red;
 }
 
@@ -117,16 +130,25 @@ th{
 .piechart1{
   margin: 50px;
   width: 20%;
+  text-align: center;
+}
+
+.chrttxt{
+  font-size: 30px;
+  color: #007bff;
+  padding: 5px;
 }
 
 .piechart2{
   margin: 50px;
   width: 20%;
+  text-align: center;
 }
 
 .piechart3{
   margin: 50px;
   width: 20%;
+  text-align: center;
 }
 
 .Mid{
@@ -196,4 +218,11 @@ flex-direction: row;
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.hr{
+  flex: 1;
+  margin: 20px;
+  background-color: #000000;
+  height: 3px;
 }
