@@ -104,7 +104,17 @@ function App() {
     setChartData(newData);
   }
 
-  const totalAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
+const totalAmount = expenses.reduce((total, expense) => total + expense.amount, 0);
+
+ // Calculate total income (sum of positive amounts)
+ const totalIncome = expenses
+ .filter((expense) => expense.amount > 0)
+ .reduce((total, expense) => total + expense.amount, 0);
+
+// Calculate total debited amount (sum of negative amounts)
+const totalDebit = expenses
+ .filter((expense) => expense.amount < 0)
+ .reduce((total, expense) => total + expense.amount, 0);
 
   return (
     <div className="App">
@@ -122,7 +132,7 @@ function App() {
         </div>
         <div className='piechart1'>
           <PieChart data={chartData} />
-          <div className='chrttxt'>Debit / Credit</div>
+          <div className='chrttxt'>Credit / Debit</div>
         </div>
         <div className='piechart2'><PieChart
           data={[
@@ -145,12 +155,10 @@ function App() {
           </div>
         </div>
       </div>
-      <hr className='hr'></hr>
-      <div className='banceamt'>Income Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} />
-      </div>
-      <div className='banceamt'>Debited Amount: {totalAmount} <FontAwesomeIcon className='rupeeicon' icon={['fas', 'fa-indian-rupee-sign']} />
-      </div>
-      <div className='Table'>
+      <hr className="hr" />
+      <div className="banceamt">Credited Amount: {totalIncome} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
+      <div className="banceamt">Debited Amount: {Math.abs(totalDebit)} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
+      <div className="Table">
         <table>
           <thead>
             <tr>
