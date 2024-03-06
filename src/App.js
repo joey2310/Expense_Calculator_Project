@@ -134,7 +134,7 @@ const totalDebit = expenses
           <PieChart data={chartData} />
           <div className='chrttxt'>Credit / Debit</div>
         </div>
-        <div className='piechart2'><PieChart
+        {/* <div className='piechart2'><PieChart
           data={[
             { title: 'One', value: 10, color: '#E38627' },
             { title: 'Two', value: 15, color: '#C13C37' },
@@ -153,16 +153,19 @@ const totalDebit = expenses
           <div className='chrttxt'>
             Title Wise
           </div>
-        </div>
+        </div> */}
       </div>
       <hr className="hr" />
-      <div className="banceamt">Credited Amount: {totalIncome} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
-      <div className="banceamt">Debited Amount: {Math.abs(totalDebit)} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
+      <div className='dd'>
+        <div className="banceamt">Total Credited Amount: {totalIncome} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
+        <div className="banceamt">Total Debited Amount: {Math.abs(totalDebit)} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
+        <div className="banceamt">Balance Amount: {totalIncome + totalDebit} <FontAwesomeIcon className="rupeeicon" icon={['fas', 'fa-indian-rupee-sign']} /></div>
+      </div>
       <div className="Table">
         <table>
           <thead>
             <tr>
-              <th>Date</th>
+              <th >Date</th>
               <th>TITLE</th>
               <th>CATEGORY</th>
               <th>AMOUNT</th>
@@ -173,12 +176,12 @@ const totalDebit = expenses
           <tbody>
             {expenses.map((expense) =>
               <tr key={expense.id}>
-                <td>{expense.date}</td>
-                <td>{expense.title}</td>
-                <td>{expense.category}</td>
-                <td>{expense.amount}</td>
-                <td>{expense.credit}</td>
-                <td className='td5'><button className='delete-btn' onClick={() => deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
+                <td className='td1'>{expense.date}</td>
+                <td className='td2'>{expense.title}</td>
+                <td className='td3'>{expense.category}</td>
+                <td className='td4'>{expense.amount}</td>
+                <td className='td5'>{expense.credit}</td>
+                <td className='td6'><button className='delete-btn' onClick={() => deleteExpense(expense.id)}><FontAwesomeIcon className='deltbtn' icon={['fas', 'fa-trash-can']} /></button></td>
               </tr>
             )}
           </tbody>
