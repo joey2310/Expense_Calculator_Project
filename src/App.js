@@ -32,9 +32,7 @@ const ExpenseForm = ({ onAddExpense, onUpdateChart }) => {
       credit: credit ? 'Credit' : 'Debit', // Set credit/debit based on toggle state
       date: new Date().toLocaleString() // Include the current date
     };
-
-    console.log(newExpense);
-
+    
     onAddExpense(newExpense);
 
     setTitle('');
@@ -58,6 +56,7 @@ const ExpenseForm = ({ onAddExpense, onUpdateChart }) => {
             <option value="Transport">Transport</option>
             <option value="Shopping">Shopping</option>
             <option value="Entertainment">Entertainment</option>
+            <option value="Other">Other</option>
             <option value="Salary">Salary</option>
           </select>
         </div>
