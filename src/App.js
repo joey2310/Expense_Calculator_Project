@@ -23,7 +23,6 @@ const ExpenseForm = ({ onAddExpense, onUpdateChart }) => {
     }
     const adjustedAmount = credit ? +amount : -amount; // Adjust amount based on toggle state
 
-
     const newExpense = {
       id: Math.random().toString(),
       title,
@@ -83,8 +82,8 @@ const ExpenseForm = ({ onAddExpense, onUpdateChart }) => {
 function App() {
   const [expenses, setExpenses] = useState([]);
   const [chartData, setChartData] = useState([
-    { title: 'Income', value: 100, color: '#E38627' },
-    { title: 'Expense', value: 150, color: '#C13C37' },
+    { title: 'Income', value: 100, color: 'grey' },
+    { title: 'Expense', value: 150, color: 'black' },
   ]);
 
   const addExpense = (expense) => {
