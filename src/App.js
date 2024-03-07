@@ -7,6 +7,7 @@ import { far } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PieChart } from 'react-minimal-pie-chart';
 import Toggle from 'react-toggle';
+import axios from 'axios';
 
 // Expense Form Component
 const ExpenseForm = ({ onAddExpense, onUpdateChart }) => {
@@ -96,8 +97,8 @@ function App() {
 
   const updateChart = ()=>{
     const newData = [
-      { title: 'New Data 1', value: totalAmount * 100, color: '#E38627' },
-      { title: 'New Data 2', value: Math.random() * 100, color: '#C13C37' },
+      { title: 'New Data 1', value: totalAmount * 100, color: '#grey' },
+      { title: 'New Data 2', value: Math.random() * 100, color: 'black' },
     ];
     setChartData(newData);
   }

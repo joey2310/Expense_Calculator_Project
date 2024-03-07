@@ -5,7 +5,6 @@
 body{margin: 0;
   padding:0;
   background-color: rgb(255, 255, 255);
-  /* background-image: url('https://i0.wp.com/www.sutisoft.com/blog/wp-content/uploads/2016/10/Tips-on-How-to-Manage-Your-Travel-Expenses.jpg?w=1663&ssl=1'); */
   background-size:100%;
   background-repeat:no-repeat;
 }
@@ -139,7 +138,7 @@ th{
 
 .chrttxt{
   font-size: 30px;
-  color: #007bff;
+  color: #454545;
   padding: 5px;
 }
 
